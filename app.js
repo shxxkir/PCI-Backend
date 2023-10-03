@@ -9,11 +9,12 @@ dotenv.config();
 // Connect to MySQL
 require('./configs/db')
 
-// Parse JSON request bodies
+// Parse JSON request bodies 
 app.use(express.json());
 
 // Set up your routes
-
+app.use('/', require('./routes/supplierRoute'));
+app.use('/', require('./routes/productRoute'));
 
 const PORT = process.env.PORT || 8080;
 
